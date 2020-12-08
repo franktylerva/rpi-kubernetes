@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: rook-ceph-storage-classes
+  namespace: flux-system
+spec:
+  dependsOn:
+  - name: rook-ceph-backend
+  interval: 10m0s
+  path: ./staging-cluster/storage-classes
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: rook-ceph
+  validation: client
+

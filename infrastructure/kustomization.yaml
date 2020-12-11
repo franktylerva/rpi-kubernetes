@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - sources
   - traefik
-  # - nfs-provisioner
+  - nfs-provisioner
